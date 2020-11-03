@@ -1,0 +1,39 @@
+module value_store (
+    input btna,
+    input btnb,
+    input values[16],
+    input clk,  // clock
+    input rst,  // reset
+    output outA[16],
+    output outB[16]
+  ) {
+  
+  // Detect the rising edge
+  edge_detector detectorA (#RISE(1), #FALL(0), .clk(clk));
+  edge_detector detectorB (#RISE(1), #FALL(0), .clk(clk));
+  
+  
+  // Detect button presses 
+  button_conditioner conditionerA (.clk(clk), .in(btna));
+  button_conditioner conditionerB (.clk(clk), .in(btnb));
+    
+  // Register to remember input of values and storing to A and B 
+  dff flipA[16](#INIT(0) , .clk(clk), .rst(rst));
+  dff flipB[16](#INIT(0) , .clk(clk), .rst(rst));
+
+  always {
+        detectorA.in = conditionerA.out;
+        detectorB.in = conditionerB.out;
+    
+        if (detectorA.out) {
+          flipA.d = values;        
+        }
+        
+        if (detectorB.out) {
+          flipB.d = values;
+        }
+ 
+        outA = flipA.q;
+        outB = flipB.q; 
+  }
+}
