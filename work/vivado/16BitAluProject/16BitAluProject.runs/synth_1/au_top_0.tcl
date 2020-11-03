@@ -84,15 +84,15 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/adder_7.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/alu_4.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/boolean_8.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/button_conditioner_3.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/compare_10.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/edge_detector_2.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/pipeline_6.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/reset_conditioner_5.v
-  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/shifter_9.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/adder_6.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/alu_2.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/boolean_7.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/button_conditioner_5.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/compare_9.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/edge_detector_4.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/pipeline_10.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/reset_conditioner_3.v
+  D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/shifter_8.v
   D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/value_store_1.v
   D:/Documents/alchitry/16BitAluProject/work/vivado/16BitAluProject/16BitAluProject.srcs/sources_1/imports/verilog/au_top_0.v
 }

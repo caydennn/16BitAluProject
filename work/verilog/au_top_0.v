@@ -38,27 +38,12 @@ module au_top_0 (
     .outB(M_valuestorer_outB)
   );
   
-  wire [1-1:0] M_compDetect_out;
-  reg [1-1:0] M_compDetect_in;
-  edge_detector_2 compDetect (
-    .clk(clk),
-    .in(M_compDetect_in),
-    .out(M_compDetect_out)
-  );
-  
-  wire [1-1:0] M_compCond_out;
-  button_conditioner_3 compCond (
-    .clk(clk),
-    .in(io_button[1+0-:1]),
-    .out(M_compCond_out)
-  );
-  
   wire [16-1:0] M_myalu_out;
   wire [3-1:0] M_myalu_zvn;
   reg [16-1:0] M_myalu_a;
   reg [16-1:0] M_myalu_b;
   reg [6-1:0] M_myalu_alufn_signal;
-  alu_4 myalu (
+  alu_2 myalu (
     .a(M_myalu_a),
     .b(M_myalu_b),
     .alufn_signal(M_myalu_alufn_signal),
@@ -68,7 +53,7 @@ module au_top_0 (
   
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_5 reset_cond (
+  reset_conditioner_3 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
@@ -80,15 +65,27 @@ module au_top_0 (
     usb_tx = usb_rx;
     led = 8'h00;
     io_led = 24'h000000;
-    io_seg = 8'hff;
-    io_sel = 4'hf;
+    
+    case (M_myalu_zvn[1+0-:1])
+      1'h0: begin
+        io_sel = 4'hf;
+        io_seg = 8'hff;
+      end
+      1'h1: begin
+        io_sel = 4'hb;
+        io_seg = 8'h86;
+      end
+      default: begin
+        io_sel = 4'hf;
+        io_seg = 8'hff;
+      end
+    endcase
     M_valuestorer_clk = clk;
     M_valuestorer_btna = io_button[3+0-:1];
     M_valuestorer_btnb = io_button[4+0-:1];
     M_valuestorer_values[0+7-:8] = io_dip[0+7-:8];
     M_valuestorer_values[8+7-:8] = io_dip[8+7-:8];
     M_valuestorer_rst = io_button[2+0-:1];
-    M_compDetect_in = M_compCond_out;
     M_myalu_alufn_signal = io_dip[16+0+5-:6];
     M_myalu_a = M_valuestorer_outA;
     M_myalu_b = M_valuestorer_outB;

@@ -18,7 +18,7 @@ module value_store_1 (
   
   wire [1-1:0] M_detectorA_out;
   reg [1-1:0] M_detectorA_in;
-  edge_detector_2 detectorA (
+  edge_detector_4 detectorA (
     .clk(clk),
     .in(M_detectorA_in),
     .out(M_detectorA_out)
@@ -26,21 +26,21 @@ module value_store_1 (
   
   wire [1-1:0] M_detectorB_out;
   reg [1-1:0] M_detectorB_in;
-  edge_detector_2 detectorB (
+  edge_detector_4 detectorB (
     .clk(clk),
     .in(M_detectorB_in),
     .out(M_detectorB_out)
   );
   
   wire [1-1:0] M_conditionerA_out;
-  button_conditioner_3 conditionerA (
+  button_conditioner_5 conditionerA (
     .clk(clk),
     .in(btna),
     .out(M_conditionerA_out)
   );
   
   wire [1-1:0] M_conditionerB_out;
-  button_conditioner_3 conditionerB (
+  button_conditioner_5 conditionerB (
     .clk(clk),
     .in(btnb),
     .out(M_conditionerB_out)
@@ -68,18 +68,18 @@ module value_store_1 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_flipA_q <= 1'h0;
+      M_flipB_q <= 1'h0;
     end else begin
-      M_flipA_q <= M_flipA_d;
+      M_flipB_q <= M_flipB_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_flipB_q <= 1'h0;
+      M_flipA_q <= 1'h0;
     end else begin
-      M_flipB_q <= M_flipB_d;
+      M_flipA_q <= M_flipA_d;
     end
   end
   

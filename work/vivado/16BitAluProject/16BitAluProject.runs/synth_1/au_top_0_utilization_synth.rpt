@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1.1 (win64) Build 2960000 Wed Aug  5 22:57:20 MDT 2020
-| Date         : Mon Nov  2 19:29:56 2020
+| Date         : Tue Nov  3 21:39:08 2020
 | Host         : Caydens-Razer-Blade running 64-bit major release  (build 9200)
 | Command      : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
 | Design       : au_top_0
@@ -152,7 +152,7 @@ Table of Contents
 | OBUF     |   45 |                  IO |
 | LUT5     |   29 |                 LUT |
 | IBUF     |   27 |                  IO |
-| LUT4     |   22 |                 LUT |
+| LUT4     |   23 |                 LUT |
 | LUT3     |   18 |                 LUT |
 | CARRY4   |   14 |          CarryLogic |
 | LUT2     |    7 |                 LUT |

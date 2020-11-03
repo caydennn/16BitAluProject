@@ -7,12 +7,15 @@ module boolean (
 
   
   always {
-
+    //switch cases depending on which operations 
     case(alufn_signal[3:0]){
-    
+      //AND
       b1000: out = a & b;
+      //OR
       b1110: out = a | b;
+      //XOR
       b0110: out = a ^ b;
+      //A
       b1010: out = a;
       default:
         out = 16b0;

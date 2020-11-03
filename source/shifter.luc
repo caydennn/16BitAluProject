@@ -8,8 +8,13 @@ module shifter (
   always {
   case (alufn_signal){
     default: out = a;
+      
+    // Using lucid inbuilt shifter Math Operator ( << / >> )
+    // Unsigned shift left and right 
     b100000: out = a << b;
     b100001: out = a >> b;
+      
+    // Signed right shift 
     b100011: out = $signed(a) >>> b;
     }
   }

@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module alu_4 (
+module alu_2 (
     input [15:0] a,
     input [15:0] b,
     input [5:0] alufn_signal,
@@ -14,28 +14,28 @@ module alu_4 (
   
   
   
-  wire [16-1:0] M_adderUnit_out;
   wire [1-1:0] M_adderUnit_z;
   wire [1-1:0] M_adderUnit_v;
   wire [1-1:0] M_adderUnit_n;
+  wire [16-1:0] M_adderUnit_out;
   reg [16-1:0] M_adderUnit_a;
   reg [16-1:0] M_adderUnit_b;
   reg [6-1:0] M_adderUnit_alufn_signal;
-  adder_7 adderUnit (
+  adder_6 adderUnit (
     .a(M_adderUnit_a),
     .b(M_adderUnit_b),
     .alufn_signal(M_adderUnit_alufn_signal),
-    .out(M_adderUnit_out),
     .z(M_adderUnit_z),
     .v(M_adderUnit_v),
-    .n(M_adderUnit_n)
+    .n(M_adderUnit_n),
+    .out(M_adderUnit_out)
   );
   
   wire [16-1:0] M_booleanUnit_out;
   reg [16-1:0] M_booleanUnit_a;
   reg [16-1:0] M_booleanUnit_b;
   reg [6-1:0] M_booleanUnit_alufn_signal;
-  boolean_8 booleanUnit (
+  boolean_7 booleanUnit (
     .a(M_booleanUnit_a),
     .b(M_booleanUnit_b),
     .alufn_signal(M_booleanUnit_alufn_signal),
@@ -46,7 +46,7 @@ module alu_4 (
   reg [16-1:0] M_shifterUnit_a;
   reg [4-1:0] M_shifterUnit_b;
   reg [6-1:0] M_shifterUnit_alufn_signal;
-  shifter_9 shifterUnit (
+  shifter_8 shifterUnit (
     .a(M_shifterUnit_a),
     .b(M_shifterUnit_b),
     .alufn_signal(M_shifterUnit_alufn_signal),
@@ -58,7 +58,7 @@ module alu_4 (
   reg [1-1:0] M_compareUnit_v;
   reg [1-1:0] M_compareUnit_n;
   reg [6-1:0] M_compareUnit_alufn_signal;
-  compare_10 compareUnit (
+  compare_9 compareUnit (
     .z(M_compareUnit_z),
     .v(M_compareUnit_v),
     .n(M_compareUnit_n),
